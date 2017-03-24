@@ -50,7 +50,9 @@ done
 echo "${REDIS_PORTSTART} to ${REDIS_PORTEND} accpet in firewall"
 REDIS_MINSTART=$[${REDIS_PORTSTART}+10000]
 REDIS_MINEND=$[${REDIS_PORTEND}+10000]
-sed -i "/\:OUTPUT ACCEPT \[0\:0\]/a\-A INPUT -p tcp -m tcp --dport ${REDIS_PORTSTART}:${REDIS_PORTEND} -j ACCEPT" /etc/sysconfig/iptables
-sed -i "/\:OUTPUT ACCEPT \[0\:0\]/a\-A INPUT -p tcp -m tcp --dport ${REDIS_MINSTART}:${REDIS_MINEND} -j ACCEPT" /etc/sysconfig/iptables
-/etc/init.d/iptables restart
+#sed -i "/\:OUTPUT ACCEPT \[0\:0\]/a\-A INPUT -p tcp -m tcp --dport ${REDIS_PORTSTART}:${REDIS_PORTEND} -j ACCEPT" /etc/sysconfig/iptables
+#sed -i "/\:OUTPUT ACCEPT \[0\:0\]/a\-A INPUT -p tcp -m tcp --dport ${REDIS_MINSTART}:${REDIS_MINEND} -j ACCEPT" /etc/sysconfig/iptables
+#/etc/init.d/iptables restart
+echo "-A INPUT -p tcp -m tcp --dport ${REDIS_PORTSTART}:${REDIS_PORTEND} -j ACCEPT"
+echo "-A INPUT -p tcp -m tcp --dport ${REDIS_MINSTART}:${REDIS_MINEND} -j ACCEPT"
 echo "${REDIS_HOME}/src/redis-trib.rb create --replicas 1 ${REDIS_LIST}"
