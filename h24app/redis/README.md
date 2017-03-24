@@ -1,4 +1,6 @@
 # Redis Cluster
+#### Author Yo
+#### Time 2017-3-24 14:18
 ## Introduce
 Redis集群 由最低6个节点组成
 
