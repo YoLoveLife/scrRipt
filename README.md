@@ -1,9 +1,8 @@
-#scrRipt
-
-######记录保存所有写过的脚本
-##新闻24小时 h24app
+# scrRipt
+个人脚本使用 所有的脚本书写以此为准
+## h24app
 * Redis Cluster
 * MySQL
-* RabbitMQ
-* Tomcat
 * Nginx
+* Tomcat
+* RabbitMQ
